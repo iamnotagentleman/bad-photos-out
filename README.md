@@ -4,6 +4,8 @@ A native macOS app that walks your Apple Photos library, asks a local Ollama vis
 
 Nothing leaves the Mac: photos are read via PhotoKit and sent only to a local Ollama server.
 
+> ⚠️ **Disclaimer:** this app is vibe-coded. No warranty, no support, no guarantees about correctness, performance, or your photo library. Use at your own risk — you are solely responsible for any photos you choose to delete based on what this app shows you.
+
 ## Setup
 
 ### 1. Install Ollama and pull a vision model

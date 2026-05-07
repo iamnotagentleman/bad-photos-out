@@ -13,6 +13,7 @@
 		2EC9F463B2B37A8C1284D75F /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6B27C1C7A2C2F2B5D7F9D /* AnalysisResult.swift */; };
 		3090C31DD27C3970D6E76929 /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEA3B76AB597565A2A24234 /* PhotoGridView.swift */; };
 		30E8F3294EA929100C65FA50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D443DEEC6CFA700649B45 /* ContentView.swift */; };
+		32E563AE7FCBC549EB1D4F2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B4BC253893C3D75B02173E /* Assets.xcassets */; };
 		5EE61DBC2FE20A99D78FD7CA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D845D4606B26C5FA50D66 /* AppSettings.swift */; };
 		66D43EF258C2F929B8254AE1 /* OllamaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F5AD5B5A831C5ED44D7F2 /* OllamaClient.swift */; };
 		BCFE7E2F36D5A03B24CC7938 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BA57F2E9128A797B85E375 /* PhotoDetailView.swift */; };
@@ -25,6 +26,7 @@
 		3753FD0A1B026A82ED31AC41 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		4C22323B5799F776FB8FDE33 /* AnalysisCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisCoordinator.swift; sourceTree = "<group>"; };
 		553D845D4606B26C5FA50D66 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		65B4BC253893C3D75B02173E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BA03D35D71F282E2832315B /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
 		7DEA3B76AB597565A2A24234 /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
 		8C51C4C1D76471626CD77D41 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		F36B6D57AF05ECB2E4EF9F69 /* BadPhotosOut */ = {
 			isa = PBXGroup;
 			children = (
+				65B4BC253893C3D75B02173E /* Assets.xcassets */,
 				C7D207A53CC2F7B340FC0F96 /* BadPhotosOutApp.swift */,
 				391FE145F9C9F0C9821A4312 /* Models */,
 				8CD17EA67465A5DCD42D6F8A /* Services */,
@@ -102,6 +105,7 @@
 			buildConfigurationList = 3343FABD0EE7F9E75759A8C8 /* Build configuration list for PBXNativeTarget "BadPhotosOut" */;
 			buildPhases = (
 				E8C29B3E41F3AD1F0FC5D671 /* Sources */,
+				3B5DADD75C42AA56974C7353 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -147,6 +151,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B5DADD75C42AA56974C7353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32E563AE7FCBC549EB1D4F2E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E8C29B3E41F3AD1F0FC5D671 /* Sources */ = {
@@ -302,7 +317,7 @@
 		188AFB50F252B06F5415A767 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BadPhotosOut/BadPhotosOut.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -319,7 +334,7 @@
 		8583E3CC4866258481F2411C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BadPhotosOut/BadPhotosOut.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;

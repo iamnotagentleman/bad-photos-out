@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06E94CE3A94C2A5BDFBFAF7F /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA03D35D71F282E2832315B /* PhotoItem.swift */; };
+		0E59063164506E8A8C38C57E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3753FD0A1B026A82ED31AC41 /* SettingsView.swift */; };
+		2D1DB1B0DD0C17331828A6F7 /* BadPhotosOutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D207A53CC2F7B340FC0F96 /* BadPhotosOutApp.swift */; };
+		2EC9F463B2B37A8C1284D75F /* AnalysisResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E6B27C1C7A2C2F2B5D7F9D /* AnalysisResult.swift */; };
+		3090C31DD27C3970D6E76929 /* PhotoGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEA3B76AB597565A2A24234 /* PhotoGridView.swift */; };
+		30E8F3294EA929100C65FA50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084D443DEEC6CFA700649B45 /* ContentView.swift */; };
+		5EE61DBC2FE20A99D78FD7CA /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553D845D4606B26C5FA50D66 /* AppSettings.swift */; };
+		66D43EF258C2F929B8254AE1 /* OllamaClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74F5AD5B5A831C5ED44D7F2 /* OllamaClient.swift */; };
+		BCFE7E2F36D5A03B24CC7938 /* PhotoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BA57F2E9128A797B85E375 /* PhotoDetailView.swift */; };
+		EBC2731BB6B4DA45E4DEE8CB /* PhotoLibraryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C51C4C1D76471626CD77D41 /* PhotoLibraryService.swift */; };
+		F11916A448D00036FF3CC89F /* AnalysisCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C22323B5799F776FB8FDE33 /* AnalysisCoordinator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		084D443DEEC6CFA700649B45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3753FD0A1B026A82ED31AC41 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		4C22323B5799F776FB8FDE33 /* AnalysisCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisCoordinator.swift; sourceTree = "<group>"; };
+		553D845D4606B26C5FA50D66 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		7BA03D35D71F282E2832315B /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
+		7DEA3B76AB597565A2A24234 /* PhotoGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoGridView.swift; sourceTree = "<group>"; };
+		8C51C4C1D76471626CD77D41 /* PhotoLibraryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLibraryService.swift; sourceTree = "<group>"; };
+		90BA57F2E9128A797B85E375 /* PhotoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailView.swift; sourceTree = "<group>"; };
+		A74F5AD5B5A831C5ED44D7F2 /* OllamaClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OllamaClient.swift; sourceTree = "<group>"; };
+		C7D207A53CC2F7B340FC0F96 /* BadPhotosOutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadPhotosOutApp.swift; sourceTree = "<group>"; };
+		D4E6B27C1C7A2C2F2B5D7F9D /* AnalysisResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisResult.swift; sourceTree = "<group>"; };
+		DC16057C0DC6208A7A38F326 /* BadPhotosOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadPhotosOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		10D7AEB03EF0FA17BD16EB6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC16057C0DC6208A7A38F326 /* BadPhotosOut.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		306843F5AE3825182AF55A11 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				084D443DEEC6CFA700649B45 /* ContentView.swift */,
+				90BA57F2E9128A797B85E375 /* PhotoDetailView.swift */,
+				7DEA3B76AB597565A2A24234 /* PhotoGridView.swift */,
+				3753FD0A1B026A82ED31AC41 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		391FE145F9C9F0C9821A4312 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4E6B27C1C7A2C2F2B5D7F9D /* AnalysisResult.swift */,
+				553D845D4606B26C5FA50D66 /* AppSettings.swift */,
+				7BA03D35D71F282E2832315B /* PhotoItem.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8CD17EA67465A5DCD42D6F8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4C22323B5799F776FB8FDE33 /* AnalysisCoordinator.swift */,
+				A74F5AD5B5A831C5ED44D7F2 /* OllamaClient.swift */,
+				8C51C4C1D76471626CD77D41 /* PhotoLibraryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED42067E9A7C27523A4F340C = {
+			isa = PBXGroup;
+			children = (
+				F36B6D57AF05ECB2E4EF9F69 /* BadPhotosOut */,
+				10D7AEB03EF0FA17BD16EB6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F36B6D57AF05ECB2E4EF9F69 /* BadPhotosOut */ = {
+			isa = PBXGroup;
+			children = (
+				C7D207A53CC2F7B340FC0F96 /* BadPhotosOutApp.swift */,
+				391FE145F9C9F0C9821A4312 /* Models */,
+				8CD17EA67465A5DCD42D6F8A /* Services */,
+				306843F5AE3825182AF55A11 /* Views */,
+			);
+			path = BadPhotosOut;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2969CBC616CABF7C45E3ABE2 /* BadPhotosOut */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3343FABD0EE7F9E75759A8C8 /* Build configuration list for PBXNativeTarget "BadPhotosOut" */;
+			buildPhases = (
+				E8C29B3E41F3AD1F0FC5D671 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BadPhotosOut;
+			packageProductDependencies = (
+			);
+			productName = BadPhotosOut;
+			productReference = DC16057C0DC6208A7A38F326 /* BadPhotosOut.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F91CE79F7523BA84B0AB18E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2969CBC616CABF7C45E3ABE2 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FD708CEBF55814E61D1897DD /* Build configuration list for PBXProject "BadPhotosOut" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = ED42067E9A7C27523A4F340C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 54;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2969CBC616CABF7C45E3ABE2 /* BadPhotosOut */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E8C29B3E41F3AD1F0FC5D671 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F11916A448D00036FF3CC89F /* AnalysisCoordinator.swift in Sources */,
+				2EC9F463B2B37A8C1284D75F /* AnalysisResult.swift in Sources */,
+				5EE61DBC2FE20A99D78FD7CA /* AppSettings.swift in Sources */,
+				2D1DB1B0DD0C17331828A6F7 /* BadPhotosOutApp.swift in Sources */,
+				30E8F3294EA929100C65FA50 /* ContentView.swift in Sources */,
+				66D43EF258C2F929B8254AE1 /* OllamaClient.swift in Sources */,
+				BCFE7E2F36D5A03B24CC7938 /* PhotoDetailView.swift in Sources */,
+				3090C31DD27C3970D6E76929 /* PhotoGridView.swift in Sources */,
+				06E94CE3A94C2A5BDFBFAF7F /* PhotoItem.swift in Sources */,
+				EBC2731BB6B4DA45E4DEE8CB /* PhotoLibraryService.swift in Sources */,
+				0E59063164506E8A8C38C57E /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		00D6494AD757F6D5BB617643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		1199EC591D741086CA1851E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		188AFB50F252B06F5415A767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = BadPhotosOut/BadPhotosOut.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BadPhotosOut/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.veli.badphotosout;
+				PRODUCT_NAME = BadPhotosOut;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		8583E3CC4866258481F2411C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = BadPhotosOut/BadPhotosOut.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = BadPhotosOut/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.veli.badphotosout;
+				PRODUCT_NAME = BadPhotosOut;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3343FABD0EE7F9E75759A8C8 /* Build configuration list for PBXNativeTarget "BadPhotosOut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				188AFB50F252B06F5415A767 /* Debug */,
+				8583E3CC4866258481F2411C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FD708CEBF55814E61D1897DD /* Build configuration list for PBXProject "BadPhotosOut" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00D6494AD757F6D5BB617643 /* Debug */,
+				1199EC591D741086CA1851E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F91CE79F7523BA84B0AB18E2 /* Project object */;
+}

@@ -17,7 +17,7 @@ Nothing leaves the Mac: photos are read via PhotoKit and sent only to a local Ol
 ```sh
 brew install ollama
 ollama serve   # in one terminal, leave running
-ollama pull llava   # in another terminal; or any other vision model
+ollama pull gemma4:e4b   # in another terminal; or any other vision model
 ```
 
 ### 2. Generate the Xcode project
@@ -42,7 +42,7 @@ On first run macOS will ask for Photos access. Grant it.
 
 ### 4. Use it
 
-1. In the sidebar, confirm the Ollama endpoint (`http://localhost:11434`) and pick a model (e.g. `llava:latest`). Click **Test connection** to populate the model dropdown.
+1. In the sidebar, confirm the Ollama endpoint (`http://localhost:11434`) and pick a model (e.g. `gemma4:e4b`). Click **Test connection** to populate the model dropdown.
 2. Type a criterion: e.g. `blurry, dark, or accidental shots`.
 3. Choose a scope (last N days / specific album / entire library). For a first try, scope to a small album.
 4. Click **Start analysis**. Photos stream into the grid with a colored badge (green = keep, red = flagged, yellow = failed).

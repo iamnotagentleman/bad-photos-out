@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="BadPhotosOut/Assets.xcassets/AppIcon.appiconset/icon_256.png" width="160" alt="BadPhotosOut icon">
+</p>
+
 # BadPhotosOut
 
 A native macOS app that walks your Apple Photos library, asks a local Ollama vision model to judge each photo against a free-text criterion you supply, and surfaces the flagged photos with the model's reason. **No automatic deletion** — you review the list and delete in Photos manually.

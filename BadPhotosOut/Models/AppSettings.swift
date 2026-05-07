@@ -3,6 +3,7 @@ import SwiftUI
 
 enum ScopeMode: String, CaseIterable, Identifiable {
     case lastNDays
+    case dateRange
     case album
     case entireLibrary
 
@@ -10,6 +11,7 @@ enum ScopeMode: String, CaseIterable, Identifiable {
     var label: String {
         switch self {
         case .lastNDays: return "Last N days"
+        case .dateRange: return "Date range"
         case .album: return "Album"
         case .entireLibrary: return "Entire library"
         }
@@ -52,6 +54,8 @@ final class AppSettings: ObservableObject {
     @AppStorage("requestTimeoutSeconds") var requestTimeoutSeconds: Int = 120
     @AppStorage("scopeMode") var scopeModeRaw: String = ScopeMode.lastNDays.rawValue
     @AppStorage("scopeDays") var scopeDays: Int = 30
+    @AppStorage("scopeStartDate") var scopeStartDateRaw: Double = 0
+    @AppStorage("scopeEndDate") var scopeEndDateRaw: Double = 0
     @AppStorage("scopeAlbumID") var scopeAlbumID: String = ""
     @AppStorage("skipScreenshots") var skipScreenshots: Bool = false
     @AppStorage("thinkingMode") var thinkingModeRaw: String = ThinkingMode.off.rawValue
@@ -65,6 +69,24 @@ final class AppSettings: ObservableObject {
     var thinkingMode: ThinkingMode {
         get { ThinkingMode(rawValue: thinkingModeRaw) ?? .off }
         set { thinkingModeRaw = newValue.rawValue }
+    }
+
+    var scopeStartDate: Date {
+        get {
+            scopeStartDateRaw == 0
+                ? Calendar.current.date(byAdding: .day, value: -30, to: Date()) ?? Date()
+                : Date(timeIntervalSinceReferenceDate: scopeStartDateRaw)
+        }
+        set { scopeStartDateRaw = newValue.timeIntervalSinceReferenceDate }
+    }
+
+    var scopeEndDate: Date {
+        get {
+            scopeEndDateRaw == 0
+                ? Date()
+                : Date(timeIntervalSinceReferenceDate: scopeEndDateRaw)
+        }
+        set { scopeEndDateRaw = newValue.timeIntervalSinceReferenceDate }
     }
 
     var promptFingerprint: String {

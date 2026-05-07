@@ -138,9 +138,31 @@ struct SettingsView: View {
                         .pickerStyle(.radioGroup)
 
                         if settings.scopeMode == .lastNDays {
-                            HStack {
-                                Stepper("\(settings.scopeDays) days",
-                                        value: $settings.scopeDays, in: 1...3650)
+                            let daysBinding = Binding<Int>(
+                                get: { settings.scopeDays },
+                                set: { settings.scopeDays = max(1, min(3650, $0)) }
+                            )
+                            HStack(spacing: 6) {
+                                TextField("Days", value: daysBinding, format: .number)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(width: 70)
+                                Stepper("days", value: daysBinding, in: 1...3650)
+                            }
+                        } else if settings.scopeMode == .dateRange {
+                            let startBinding = Binding<Date>(
+                                get: { settings.scopeStartDate },
+                                set: {
+                                    settings.scopeStartDate = $0
+                                    if settings.scopeEndDate < $0 { settings.scopeEndDate = $0 }
+                                }
+                            )
+                            let endBinding = Binding<Date>(
+                                get: { settings.scopeEndDate },
+                                set: { settings.scopeEndDate = max($0, settings.scopeStartDate) }
+                            )
+                            VStack(alignment: .leading, spacing: 6) {
+                                DatePicker("From", selection: startBinding, in: ...Date(), displayedComponents: [.date])
+                                DatePicker("To", selection: endBinding, in: settings.scopeStartDate...Date(), displayedComponents: [.date])
                             }
                         } else if settings.scopeMode == .album {
                             Picker("Album", selection: $settings.scopeAlbumID) {
@@ -191,6 +213,8 @@ struct SettingsView: View {
         }
         .onChange(of: settings.scopeMode) { _, _ in coordinator.loadPhotos() }
         .onChange(of: settings.scopeDays) { _, _ in coordinator.loadPhotos() }
+        .onChange(of: settings.scopeStartDateRaw) { _, _ in coordinator.loadPhotos() }
+        .onChange(of: settings.scopeEndDateRaw) { _, _ in coordinator.loadPhotos() }
         .onChange(of: settings.scopeAlbumID) { _, _ in coordinator.loadPhotos() }
         .onChange(of: settings.skipScreenshots) { _, _ in coordinator.loadPhotos() }
         .onChange(of: settings.userPrompt) { _, _ in coordinator.loadPhotos() }

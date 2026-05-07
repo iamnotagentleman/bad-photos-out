@@ -9,6 +9,8 @@ final class AnalysisCoordinator: ObservableObject {
     @Published private(set) var isRunning: Bool = false
     @Published private(set) var startedAt: Date? = nil
     @Published private(set) var lastError: String? = nil
+    @Published var selectedFlaggedIDs: Set<String> = []
+    @Published private(set) var isDeleting: Bool = false
 
     private let library: PhotoLibraryService
     private let client: OllamaClient
@@ -46,6 +48,8 @@ final class AnalysisCoordinator: ObservableObject {
         let assets = library.fetchAssets(
             scope: settings.scopeMode,
             days: settings.scopeDays,
+            startDate: settings.scopeStartDate,
+            endDate: settings.scopeEndDate,
             albumID: settings.scopeAlbumID,
             skipScreenshots: settings.skipScreenshots
         )
@@ -57,15 +61,58 @@ final class AnalysisCoordinator: ObservableObject {
             }
             return item
         }
+        selectedFlaggedIDs = []
         photos = newItems
         subscribe(to: newItems)
     }
 
     private func subscribe(to items: [PhotoItem]) {
-        itemSubscriptions = items.map { item in
-            item.objectWillChange.sink { [weak self] _ in
-                self?.objectWillChange.send()
-            }
+        itemSubscriptions = items.flatMap { item -> [AnyCancellable] in
+            [
+                item.objectWillChange.sink { [weak self] _ in
+                    self?.objectWillChange.send()
+                },
+                item.$state.sink { [weak self] state in
+                    if case .done(let r) = state, !r.keep {
+                        self?.selectedFlaggedIDs.insert(item.id)
+                    }
+                },
+            ]
+        }
+    }
+
+    func toggleFlaggedSelection(_ id: String) {
+        if selectedFlaggedIDs.contains(id) {
+            selectedFlaggedIDs.remove(id)
+        } else {
+            selectedFlaggedIDs.insert(id)
+        }
+    }
+
+    var selectedDeletableCount: Int {
+        photos.reduce(into: 0) { acc, item in
+            guard selectedFlaggedIDs.contains(item.id) else { return }
+            if case .done(let r) = item.state, !r.keep { acc += 1 }
+        }
+    }
+
+    func deleteSelected() async {
+        let ids = selectedFlaggedIDs
+        let assets = photos.compactMap { item -> PHAsset? in
+            guard ids.contains(item.id) else { return nil }
+            if case .done(let r) = item.state, !r.keep { return item.asset }
+            return nil
+        }
+        guard !assets.isEmpty else { return }
+        isDeleting = true
+        defer { isDeleting = false }
+        do {
+            try await library.deleteAssets(assets)
+            loadPhotos()
+        } catch {
+            let nsErr = error as NSError
+            if nsErr.code == NSUserCancelledError { return }
+            lastError = "Delete failed: \(error.localizedDescription)"
         }
     }
 

@@ -24,18 +24,58 @@ struct PhotoGridView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 6) {
                     ForEach(photos) { item in
-                        Button {
+                        SelectableCell(item: item, size: cellSize) {
                             onSelect(item)
-                        } label: {
-                            PhotoCell(item: item, size: cellSize)
                         }
-                        .buttonStyle(.plain)
                         .id(item.id)
                     }
                 }
                 .padding(8)
             }
         }
+    }
+}
+
+private struct SelectableCell: View {
+    @ObservedObject var item: PhotoItem
+    @EnvironmentObject private var coordinator: AnalysisCoordinator
+    let size: CGFloat
+    let onTap: () -> Void
+
+    var body: some View {
+        ZStack(alignment: .topLeading) {
+            Button(action: onTap) {
+                PhotoCell(item: item, size: size)
+            }
+            .buttonStyle(.plain)
+
+            if isFlagged {
+                Button {
+                    coordinator.toggleFlaggedSelection(item.id)
+                } label: {
+                    Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
+                        .font(.system(size: 22, weight: .semibold))
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(
+                            isSelected ? Color.white : Color.white,
+                            isSelected ? Color.red : Color.black.opacity(0.55)
+                        )
+                        .shadow(color: .black.opacity(0.6), radius: 1, x: 0, y: 1)
+                }
+                .buttonStyle(.plain)
+                .padding(6)
+                .help(isSelected ? "Deselect — won't be deleted" : "Select for deletion")
+            }
+        }
+    }
+
+    private var isFlagged: Bool {
+        if case .done(let r) = item.state { return !r.keep }
+        return false
+    }
+
+    private var isSelected: Bool {
+        coordinator.selectedFlaggedIDs.contains(item.id)
     }
 }
 

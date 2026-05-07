@@ -52,7 +52,14 @@ final class PhotoLibraryService: ObservableObject {
         return albums.sorted { $0.title.localizedCaseInsensitiveCompare($1.title) == .orderedAscending }
     }
 
-    func fetchAssets(scope: ScopeMode, days: Int, albumID: String, skipScreenshots: Bool) -> [PHAsset] {
+    func fetchAssets(
+        scope: ScopeMode,
+        days: Int,
+        startDate: Date,
+        endDate: Date,
+        albumID: String,
+        skipScreenshots: Bool
+    ) -> [PHAsset] {
         let options = PHFetchOptions()
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
 
@@ -60,6 +67,10 @@ final class PhotoLibraryService: ObservableObject {
         if scope == .lastNDays {
             let cutoff = Calendar.current.date(byAdding: .day, value: -days, to: Date()) ?? Date()
             predicates.append(NSPredicate(format: "creationDate >= %@", cutoff as NSDate))
+        } else if scope == .dateRange {
+            let dayStart = Calendar.current.startOfDay(for: startDate)
+            let dayAfterEnd = Calendar.current.date(byAdding: .day, value: 1, to: Calendar.current.startOfDay(for: endDate)) ?? endDate
+            predicates.append(NSPredicate(format: "creationDate >= %@ AND creationDate < %@", dayStart as NSDate, dayAfterEnd as NSDate))
         }
         if skipScreenshots {
             let mask = PHAssetMediaSubtype.photoScreenshot.rawValue
@@ -115,6 +126,13 @@ final class PhotoLibraryService: ObservableObject {
                     continuation.resume(returning: image)
                 }
             }
+        }
+    }
+
+    func deleteAssets(_ assets: [PHAsset]) async throws {
+        guard !assets.isEmpty else { return }
+        try await PHPhotoLibrary.shared().performChanges {
+            PHAssetChangeRequest.deleteAssets(assets as NSArray)
         }
     }
 

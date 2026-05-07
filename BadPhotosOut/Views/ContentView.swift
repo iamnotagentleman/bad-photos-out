@@ -109,6 +109,20 @@ struct ContentView: View {
                 Text(summaryText)
                     .foregroundStyle(.secondary)
             }
+
+            if coordinator.selectedDeletableCount > 0 {
+                Button(role: .destructive) {
+                    Task { await coordinator.deleteSelected() }
+                } label: {
+                    if coordinator.isDeleting {
+                        ProgressView().controlSize(.small)
+                    } else {
+                        Label("Delete \(coordinator.selectedDeletableCount)", systemImage: "trash")
+                    }
+                }
+                .disabled(coordinator.isRunning || coordinator.isDeleting)
+                .help("Move selected flagged photos to Recently Deleted. macOS will ask for confirmation.")
+            }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
